@@ -100,6 +100,7 @@ const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
       }
     }
   }
+    
 
   return (
     <Form {...form}>

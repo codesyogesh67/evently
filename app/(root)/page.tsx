@@ -1,25 +1,25 @@
 // import CategoryFilter from '@/components/shared/CategoryFilter';
-// import Collection from '@/components/shared/Collection'
+import Collection from '@/components/shared/Collection'
 // import Search from '@/components/shared/Search';
 import { Button } from '@/components/ui/button'
-// import { getAllEvents } from '@/lib/actions/event.actions';
-// import { SearchParamProps } from '@/types';
+import { getAllEvents } from '@/lib/actions/event.actions';
+import { SearchParamProps } from '@/types';
 import Image from 'next/image'
 import Link from 'next/link'
 import Container from '@/components/shared/Container'
 
-// export default async function Home({ searchParams }: SearchParamProps) {
-  export default function Home(){
-  // const page = Number(searchParams?.page) || 1;
-  // const searchText = (searchParams?.query as string) || '';
-  // const category = (searchParams?.category as string) || '';
+export default async function Home({ searchParams }: SearchParamProps) {
 
-  // const events = await getAllEvents({
-  //   query: searchText,
-  //   category,
-  //   page,
-  //   limit: 6
-  // })
+  const page = Number(searchParams?.page) || 1;
+  const searchText = (searchParams?.query as string) || '';
+  const category = (searchParams?.category as string) || '';
+
+  const events = await getAllEvents({
+    query: searchText,
+    category,
+    page,
+    limit: 6
+  })
 
     return (
   <>
@@ -53,7 +53,7 @@ import Container from '@/components/shared/Container'
           <CategoryFilter />
         </div> */}
 
-        {/* <Collection 
+        <Collection 
           data={events?.data}
           emptyTitle="No Events Found"
           emptyStateSubtext="Come back later"
@@ -61,7 +61,7 @@ import Container from '@/components/shared/Container'
           limit={6}
           page={page}
           totalPages={events?.totalPages}
-        /> */}
+        />
       </section>
 
     </>
