@@ -1,6 +1,6 @@
-// import CategoryFilter from '@/components/shared/CategoryFilter';
+import CategoryFilter from '@/components/shared/CategoryFilter';
 import Collection from '@/components/shared/Collection'
-// import Search from '@/components/shared/Search';
+import Search from '@/components/shared/Search';
 import { Button } from '@/components/ui/button'
 import { getAllEvents } from '@/lib/actions/event.actions';
 import { SearchParamProps } from '@/types';
@@ -47,11 +47,11 @@ export default async function Home({ searchParams }: SearchParamProps) {
 
       <section id="events" className="wrapper my-8 flex flex-col gap-8 md:gap-12">
         <h2 className="font-bold text-[32px] leading-[40px] lg:text-[36px] lg:leading-[44px] xl:text-[40px] xl:leading-[48px]">Trust by <br /> Thousands of Events</h2>
-{/* 
+
         <div className="flex w-full flex-col gap-5 md:flex-row">
           <Search />
           <CategoryFilter />
-        </div> */}
+        </div>
 
         <Collection 
           data={events?.data}

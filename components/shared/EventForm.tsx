@@ -39,6 +39,7 @@ const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
       endDateTime: new Date(event.endDateTime) 
     }
     : eventDefaultValues;
+    console.log("event for update form",event)
   const router = useRouter();
 
   const { startUpload } = useUploadThing('imageUploader')
